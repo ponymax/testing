@@ -1,0 +1,79 @@
+<html>
+<head>
+</head>
+
+<body>
+
+<center><h3>Rock, Paper, Scissors game</h3></center>
+<p>
+<center>
+<h4>
+<script>
+
+var userChoice = prompt("Do you choose rock, paper or scissors?");
+var computerChoice = Math.random();
+if (computerChoice < 0.34) {
+	computerChoice = "rock";
+} else if(computerChoice <= 0.67) {
+	computerChoice = "paper";
+} else {
+	computerChoice = "scissors";
+} console.log("Computer: " + computerChoice);
+
+var compare = function(choice1,choice2){
+    if (choice1 === choice2){
+        return "The result is a tie!";
+	document.write ("The result is a tie!");
+    }
+    else if (choice1 === "rock"){
+        if (choice2 === "scissors"){
+        return "rock wins";
+	document.write ("rock wins");
+        }
+        else {
+        return "paper wins";    
+	document.write ("paper wins");
+        }
+    }
+    else if (choice1 === "paper"){
+        if (choice2 === "rock"){
+            return "paper wins";
+		document.write ("paper wins");
+        }
+        else {
+            return "scissors wins";
+		document.write ("scissors wins");
+        }
+    }
+    else if (choice1 === "scissors"){
+        if (choice2 === "rock"){
+            return "rock wins";
+		document.write ("rock wins");
+        }
+        else {
+            return "scissors wins";
+		document.write ("scissors wins");
+        }
+    }
+};
+
+document.write(compare(userChoice, computerChoice));
+document.write (" ..Click button to play again");
+  
+</script>
+
+
+<button onclick="replayGame()">Replay!</button>
+
+<script>
+function replayGame() {
+    location.reload();
+}
+</script>
+
+
+</h4>
+</center>
+</body>
+
+</html>
